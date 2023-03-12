@@ -61,6 +61,7 @@ const _init = () => {
 		evt.preventDefault()
 		clearFormFields()
 		closeModal()
+		calculateLogoOffset()
 	})
 
 	formContainerEl.addEventListener('submit', (evt) => {
