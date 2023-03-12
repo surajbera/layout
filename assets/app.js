@@ -7,11 +7,13 @@ const _init = () => {
 	const formContainerEl = document.querySelector('.contact-form')
 	const rootElement = document.documentElement
 	const siteHeading = document.querySelector('.site-desc');
+	const sidebarLogo = document.querySelector('.sidebar-logo-container');
 	const minWidth = 900;
 
 	const calculateLogoOffset = () => {
 		const distanceFromTop = siteHeading.getBoundingClientRect().top;
-		rootElement.style.setProperty('--logo-offset', `${distanceFromTop - 55}px`);
+		console.log('I Ran');
+		sidebarLogo.style.marginTop = `${distanceFromTop - 55}px`;
 	}
 	calculateLogoOffset()
 
@@ -76,7 +78,7 @@ const _init = () => {
 			bodyEl.classList.add('error-sending-data')
 		})
 	})
-	
+
 	window.addEventListener('resize', () => {
 		if (window.innerWidth >= minWidth && !bodyEl.classList.contains('modal-window-visible')) {
 			calculateLogoOffset();
